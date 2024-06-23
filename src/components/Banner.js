@@ -4,7 +4,9 @@ import { FaGithub, FaFacebook, FaLinkedinIn } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { useTranslation } from "react-i18next";
 const Banner = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="min-h-[85vh] lg:min-h-[78vh] flex items-center"
@@ -29,7 +31,7 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-6 text-[36px] lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
             >
-              <span className="text-white mr-4">I am a</span>
+              <span className="text-white mr-4">{t("I AM A")}</span>
               <TypeAnimation
                 sequence={["Developer", 2000]}
                 speed={50}
@@ -45,10 +47,9 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-6 text-[18px] lg:text-[24px] text-white/70"
             >
-              I am a developer with a passion for creating beautiful and
-              functional websites and applications. I have experience in
-              building web applications using modern technologies like React,
-              Node, and MongoDB,...
+              {t(
+                "I am a developer with a passion for creating beautiful and functional websites and applications. I have experience in building web applications using modern technologies like React, Node, and MongoDB,..."
+              )}
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.3)}
@@ -66,7 +67,7 @@ const Banner = () => {
                   );
                 }}
               >
-                Contact me
+                {t("Contact me")}
               </button>
               <a
                 href="#"
@@ -79,7 +80,7 @@ const Banner = () => {
                 className=" btn-link"
               >
                 {" "}
-                My Profile{" "}
+                {t("My Profile")}{" "}
               </a>
             </motion.div>
             <motion.div

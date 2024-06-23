@@ -1,7 +1,11 @@
 import React from "react";
 import Logo from "../assets/logo.png";
-
+import Selector from "../redux/selector";
+import { useDispatch } from "react-redux";
+import { setSelectedLanguage } from "../redux/slice/languagesSlice";
 const Header = () => {
+  const dispatch = useDispatch();
+  const { languageSelector } = Selector();
   return (
     <header className="py-8">
       <div className="container mx-auto">
@@ -12,13 +16,14 @@ const Header = () => {
           <button
             className="btn btn-sm"
             onClick={(e) => {
-              e.preventDefault();
-              window.open(
-                "https://drive.google.com/file/d/1zoknp51kLKF3GAGbylRfR8npQ6gD0G-4/view?usp=sharing"
+              dispatch(
+                setSelectedLanguage(
+                  languageSelector.selectedLanguage === "en" ? "vi" : "en"
+                )
               );
             }}
           >
-            Work with me
+            {languageSelector.selectedLanguage}
           </button>
         </div>
       </div>

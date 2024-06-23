@@ -18,7 +18,9 @@ import MySQL from "../assets/MySQL.png";
 import Tailwind from "../assets/taidwind.png";
 import MaterialUI from "../assets/Mui.png";
 import AntDesign from "../assets/ant.png";
+import { useTranslation } from "react-i18next";
 const About = () => {
+  const { t } = useTranslation();
   const technologies = [
     {
       name: "Java",
@@ -104,10 +106,10 @@ const About = () => {
           viewport={{ once: false, amount: 0.7 }}
         >
           <p className="mb-6 text-[36px] lg:text-[60px] font-secondary font-semibold uppercase leading-[1]">
-            Experience
+            {t("Experience")}
           </p>
           <p className="mb-6 text-[18px] lg:text-[24px] text-white/70">
-            There are the technology I've worked with
+            {t("There are the technology I've worked with")}
           </p>
         </motion.div>
         <div className="mx-auto max-w-screen-lg p-4 flex flex-col justify-center w-full h-full ">

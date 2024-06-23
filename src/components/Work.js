@@ -8,7 +8,9 @@ import Game from "../assets/game.png";
 import Clinic from "../assets/clinic.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { useTranslation } from "react-i18next";
 const Work = () => {
+  const { t } = useTranslation();
   const projects = [
     {
       title: "Caro Online",
@@ -136,7 +138,7 @@ const Work = () => {
           viewport={{ once: false, amount: 0.7 }}
           className="mb-6 text-[36px] lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
         >
-          Projects
+          {t("Projects")}
         </motion.p>
         <motion.p
           variants={fadeIn("up", 0.3)}
@@ -145,7 +147,7 @@ const Work = () => {
           viewport={{ once: false, amount: 0.7 }}
           className="mb-6 text-[18px] lg:text-[24px] text-white/70"
         >
-          There are the i have worked on my school
+          {t("There are the i have worked on my school")}
         </motion.p>
 
         <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-2">
